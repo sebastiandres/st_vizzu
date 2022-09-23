@@ -1,12 +1,12 @@
 import pandas as pd
-
-from ipyvizzu import Data, Config, Style
-from ipyvizzustory import Story, Slide, Step
+from ipyvizzu import Config, Data, Style
+from ipyvizzustory import Slide, Step, Story
 
 # Create data object, read csv to data frame and add data frame to data object.
 example_data = Data()
 example_df = pd.read_csv(
-    "complex.csv",
+    #"complex.csv",
+    "https://raw.githubusercontent.com/vizzuhq/ipyvizzu-story/main/docs/examples/demo/ipyvizzu-story_example.csv",
     dtype={"Year": str},
 )
 example_data.add_data_frame(example_df)
@@ -39,7 +39,7 @@ example_style = Style(
 # and set the size of the HTML element
 # that appears within the notebook.
 story = Story(data=example_data, style=example_style)
-story.set_size("100%", "400px")
+story.set_size(1000, 1000)
 
 # Add the first slide,
 # containing a single animation step that sets the initial chart.
