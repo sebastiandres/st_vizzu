@@ -1,6 +1,5 @@
-from ipyvizzu import Data, Config
-from ipyvizzustory import Story, Slide, Step
-
+from ipyvizzu import Config, Data
+from ipyvizzustory import Slide, Step, Story
 
 data = Data()
 data.add_series("Foo", ["Alice", "Bob", "Ted"])
@@ -22,5 +21,7 @@ slide2 = Slide(
     )
 )
 story.add_slide(slide2)
+
+story.set_size(1000, 1000)
 
 story.play()
